@@ -1,0 +1,100 @@
+
+                                   ASSIGNMENT-1
+
+Create table SALESPEOPLE
+(
+	Snum 	int(4)   PK,
+	Sname 	varchar(10),
+	City 	varchar(10),
+	Comm 	float(3,2)
+);
+
+Create table CUSTOMERS
+(
+	Cnum  	int(4)  PK,
+	Cname 	varchar(10),
+	City  	varchar(10),
+	Rating 	int(4),
+	Snum    int(4)
+);
+
+Create table ORDERS
+(
+	Onum	int(4)  PK,
+	Amt	float(7,2),
+	Odate	date,
+	Cnum	int(4),
+	Snum    int(4)
+);
+
+----------Inserting data into salespeople table-------------
+
+INSERT INTO SALESPEOPLE
+VALUES('1001','Peel','London','012');
+
+INSERT INTO SALESPEOPLE
+VALUES('1002','Serres','San Jose','013');
+
+INSERT INTO SALESPEOPLE
+VALUES('1004','Motika','London','011');
+
+INSERT INTO SALESPEOPLE
+VALUES('1007','Rifkin','Barcelona','015');
+
+INSERT INTO SALESPEOPLE
+VALUES('1003','Axelrod','New York','010');
+
+----------Inerting data into Customer table----------------
+
+INSERT INTO CUSTOMERS
+VALUES('2001','Hoffman','London','100','1001');
+
+INSERT INTO CUSTOMERS
+VALUES('2002','Giovanni','Rome','200','1003');
+
+INSERT INTO CUSTOMERS
+VALUES('2003','Liu','San Jose','200','1002');
+
+INSERT INTO CUSTOMERS
+VALUES('2004','Grass','Berlin','300','1002');
+
+INSERT INTO CUSTOMERS
+VALUES('2006','Clemens','London','100','1001');
+
+INSERT INTO CUSTOMERS
+VALUES('2008','Cisneros','San Jose','300','1007');
+
+INSERT INTO CUSTOMERS
+VALUES('2007','Pereira','Rome','100','1004');
+
+--------------Inserting data into Orders table------------
+
+INSERT INTO ORDERS
+VALUES('3001','0001869','03-OCT-1990','2008','1007');
+
+INSERT INTO ORDERS
+VALUES('3003','0076719','03-OCT-1990','2001','1001');
+
+INSERT INTO ORDERS
+VALUES('3002','0190010','03-OCT-1990','2007','1004');
+
+INSERT INTO ORDERS
+VALUES('3005','0516045','03-OCT-1990','2003','1002');
+
+INSERT INTO ORDERS
+VALUES('3006','0109816','03-OCT-1990','2008','1007');
+
+INSERT INTO ORDERS
+VALUES('3009','0171323','04-OCT-1990','2002','1003');
+
+INSERT INTO ORDERS
+VALUES('3007','0007575','04-OCT-1990','2004','1002');
+
+INSERT INTO ORDERS
+VALUES('3008','0472300','05-OCT-1990','2006','1001');
+
+INSERT INTO ORDERS
+VALUES('3010','0130995','06-OCT-1990','2004','1002');
+
+INSERT INTO ORDERS
+VALUES('3011','0989188','06-OCT-1990','2006','1001');
