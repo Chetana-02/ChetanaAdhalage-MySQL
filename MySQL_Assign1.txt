@@ -3,7 +3,7 @@
 
 Create table SALESPEOPLE
 (
-	Snum 	int(4)   PK,
+	Snum 	int(4)   Primary key,
 	Sname 	varchar(10),
 	City 	varchar(10),
 	Comm 	float(3,2)
@@ -11,7 +11,7 @@ Create table SALESPEOPLE
 
 Create table CUSTOMERS
 (
-	Cnum  	int(4)  PK,
+	Cnum  	int(4)  Primary key,
 	Cname 	varchar(10),
 	City  	varchar(10),
 	Rating 	int(4),
@@ -20,7 +20,7 @@ Create table CUSTOMERS
 
 Create table ORDERS
 (
-	Onum	int(4)  PK,
+	Onum	int(4)  Primary key,
 	Amt	float(7,2),
 	Odate	date,
 	Cnum	int(4),
@@ -70,7 +70,7 @@ VALUES('2007','Pereira','Rome','100','1004');
 --------------Inserting data into Orders table------------
 
 INSERT INTO ORDERS
-VALUES('3001','0001869','03-OCT-1990','2008','1007');
+VALUES('3001','0001869','03-10-1990','2008','1007');
 
 INSERT INTO ORDERS
 VALUES('3003','0076719','03-10-1990','2001','1001');
