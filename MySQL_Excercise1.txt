@@ -1,0 +1,193 @@
+--------------------------------Exercise No 1-----------------------------------
+
+Create table SEMP
+(
+	EMPNO  	CHAR(4),
+	EMPNAME CHAR(20),
+	BASIC   FLOAT(9,2),
+	DEPTNO	  CHAR(2),
+	DEPTHEAD  CHAR(4)
+);
+
+Create table SDEPT	
+(
+	DEPTNO    CHAR(2),
+	DEPTNAME  CHAR(15)
+);
+
+Insert into SDEPT
+values(10,'Development');
+
+
+
+Insert into SEMP(EMPNO,EMPNAME,BASIC,DEPTNO)
+values(0001,'SUNIL','6000','10');
+
+Insert into SEMP(EMPNO,EMPNAME,BASIC,DEPTNO)
+values(0002,'HIREN','8000','20');
+
+Insert into SEMP
+values(0003,'ALI',4000,'10','0001');
+
+Insert into SEMP(EMPNO,EMPNAME,BASIC,DEPTHEAD)
+values(0004,'GEORGE','6000','0002');
+
+CREATE table S
+(
+	`S#` 	 char(5),
+	Sname    char(15),
+	Status	 int(4),
+	City	 char(10)
+);
+
+Insert into S
+values('S1','Smith',20,'London');
+
+Insert into S
+values('S2','Jones',10,'Paris');
+
+Insert into S
+values('S3','Blake',30,'Paris');
+
+Insert into S
+values('S4','Clark',20,'London');
+
+Insert into S
+values('S5','Adams',30,'Athens');
+
+CREATE table P
+(
+	`P#`    char(5),
+	Pname   char(15),
+	Color   char(5),
+	Weight  int(4),
+	City	 char(10)
+);
+
+INSERT INTO P
+values('P1','Nut','Red',12,'London');
+
+INSERT INTO P
+values('P2','Bolt','Green',17,'Paris');
+
+INSERT INTO P
+values('P3','Screw','Blue',17,'Rome');
+
+INSERT INTO P
+values('P4','Screw','Red',14,'London');
+
+INSERT INTO P
+values('P5','Cam','Blue',12,'Paris');
+
+INSERT INTO P
+values('P6','Cog','Red',19,'London');
+
+
+CREATE table J
+(
+	`J#`  char(5),
+	Jname  char(10),
+	City   char(10)
+);
+
+Insert into J
+values('J1','Sorter','Paris');
+
+Insert into J
+values('J2','Punch','Rome');
+
+Insert into J
+values('J3','Reader','Athens');
+
+Insert into J
+values('J4','Console','Athens');
+
+Insert into J
+values('J5','Collator','London');
+
+Insert into J
+values('J6','Terminal','Oslo');
+
+Insert into J
+values('J7','Tape','London');
+
+
+
+CREATE TABLE SPJ
+(
+	`S#` CHAR(4),
+	`P#` CHAR(4),
+	`J#` CHAR(4), 
+	QTY INT(4)
+);
+
+
+
+Write the SELECT queries to do the following:-
+
+5. Display all the data from the S    table.
+
+Syntax: Select * from S;
+
+6. Display only the S# and SNAME fields    from the S table.
+
+Syntax: Select `S#`,Sname
+        from S;
+
+7. Display the PNAME and COLOR from the  P table for the CITY=”London”.
+
+Syntax: Select Pname,Color
+        FROM P
+        WHERE City='London';
+
+
+8. Display all the Suppliers from    London.
+
+Syntax: Select `S#`,City
+        From S
+        WHERE City='London'; 
+
+9. Display all the Suppliers from Paris or Athens.
+
+Syntax: Select `S#`,City
+        FROM S
+        WHERE City='Paris' or City='Athens';
+
+10. Display all the Projects in Athens.
+
+Syntax: Select `P#`,City
+        FROM P
+        WHERE City='Athens';
+
+
+
+11. Display all the Partnames with the weight between 12 and 14 (inclusive of both).
+
+Select Pname,weight
+FROM P
+WHERE Weight between 12 and 14;
+
+
+12. Display all the Suppliers with a Status greater than or equal to 20.
+
+Select Sname,Status
+FROM S
+WHERE Status>=20;
+
+
+13. Display all the Suppliers except the Suppliers from London.
+
+Select * from S
+WHERE City!='London';
+
+14. Display only the Cities from where the Suppliers come from.
+
+Select City
+FROM S;
+
+15. Assuming that the Part Weight is in GRAMS, display the same in
+MILLIGRAMS and KILOGRAMS.
+
+Select Weight, Weight*1000 as 'MILLIGRAMS', Weight/1000 as 'KILOGRAMS'
+FROM P;
+
