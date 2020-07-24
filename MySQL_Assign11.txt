@@ -1,0 +1,30 @@
+-------------------------------ASSIGNMENT-11---------------------------------------
+
+
+1) Write a query that uses a subquery to obtain all       orders for the customer named
+   Cisneros. Assume you do not know his customer       number (cnum).
+         
+Syntax : Select Onum,Odate FROM orders
+         WHERE Cnum=
+         (Select Cnum from customers
+	 WHERE Cname='Cisneros');
+
+2) Write a query that produces the names and ratings    of all customers who have
+   above-average orders.
+
+Syntax :  Select Cname,Rating 
+	  FROM customers
+	  WHERE Cnum IN 
+	  (Select Cnum FROM orders
+	   WHERE Amt >
+	  (Select avg(Amt) 
+	   FROM orders));
+
+3) Write a query that selects the total amount in       orders for each salesperson for
+   whom this total is greater than the amount of the      largest order in the table.
+
+Syntax : Select Snum,sum(Amt)
+	 FROM orders
+	 GROUP BY Snum
+ 	 HAVING sum(Amt) > (Select max(Amt)
+	 FROM orders);
