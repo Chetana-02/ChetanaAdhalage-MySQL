@@ -1,0 +1,60 @@
+
+------------------------------------Excercise 3----------------------------------------------
+
+
+1. Display all the Supplier names with the initial letter capital.
+
+Syntax : Select CONCAT(UPPER(SUBSTRING(Sname,1,1)),LOWER(SUBSTRING(Sname,2))) AS Sname
+	 FROM S;
+---------------------------------------------------------------------------------------------
+
+2. Display all the Supplier names in upper case.
+
+Syntax : Select UPPER (Sname)
+	 FROM S;
+---------------------------------------------------------------------------------------------
+
+3. Display all the Supplier names in lower case.
+
+Syntax : Select LOWER (Sname)
+	 FROM S;
+---------------------------------------------------------------------------------------------
+
+4. Display all the Supplier names padded to 25 characters, with spaces on the left.
+
+Syntax : Select LPAD(Sname,25,'*')
+	 FROM S;
+---------------------------------------------------------------------------------------------
+
+5. Display all the Supplier names (with ‘la’ replaced by ‘ro’).
+ HINT: REPLACE.
+
+Syntax : Select REPLACE(Sname,'la','ro')
+	 FROM S;
+---------------------------------------------------------------------------------------------
+
+6. Implement the above command such that ‘l’ is replaced with ‘r’ and ‘a’ is replaced
+with ‘o’.
+
+Syntax : Select TRANSLATE (Sname,'la','ro')     (Available in Oracle only)
+	 FROM S;
+
+	 Select REPLACE(REPLACE(Sname,'l','r'),'a','o') as 'Sname' 
+	 from S;
+---------------------------------------------------------------------------------------------
+
+7. Display the Supplier names and the lengths of the names.
+
+Syntax : Select Sname,length (Sname)
+	 FROM S;
+---------------------------------------------------------------------------------------------
+
+8. Use the soundex function to search for a supplier by the name of ‘BLOKE’.
+
+Syntx : Select * from S
+	WHERE soundex(Sname) = soundex('BLOKE');
+---------------------------------------------------------------------------------------------
+
+9. Display the Supplier name and the status (as Ten, Twenty, Thirty, etc.).
+
+10. Display the current day (e.g. Thursday). 
